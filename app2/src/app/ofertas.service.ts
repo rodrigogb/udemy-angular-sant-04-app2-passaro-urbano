@@ -1,4 +1,5 @@
 import { Oferta } from './shared/oferta.model'
+import { ɵangular_packages_platform_browser_dynamic_testing_testing_a } from '@angular/platform-browser-dynamic/testing';
 
 export class OfertasService {
 
@@ -6,7 +7,7 @@ export class OfertasService {
         {
             id: 1,
             categoria: "restaurante",
-            titulo: "Super Burger",
+            titulo: "Super X Burger",
             descricao_oferta: "Rodízio de Mini-hambúrger com opção de entrada.",
             anunciante: "Original Burger",
             valor: 29.90,
@@ -53,9 +54,27 @@ export class OfertasService {
         }
     ]
 
-    public getOfertas(): Array<any> {
+    public getOfertas(): Array<Oferta> {
         
         return this.ofertas;
+    }
+
+    public getOfertas2(): Promise<Oferta[]> {
+
+        return new Promise((resolve, reject) => {
+            //algum tipo de processamento que, ao finalizar, chama a função resolve ou reject
+            let deu_certo = false;
+            if(deu_certo) {
+                resolve(this.ofertas);
+            } else {
+                reject({
+                    codigo_erro: 404, mensagem_erro: 'Not found'
+                });
+            }
+            
+        });
+
+
     }
 
 }
