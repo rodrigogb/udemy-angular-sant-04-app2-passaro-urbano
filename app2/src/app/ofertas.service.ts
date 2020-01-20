@@ -87,7 +87,7 @@ export class OfertasService {
         }).then((ofertas: Oferta[]) => {
             console.log('terceiro then executado apos 3 segundos porque estava aguardando uma promisse');
             return ofertas
-        })
+        }) 
 
 
     }

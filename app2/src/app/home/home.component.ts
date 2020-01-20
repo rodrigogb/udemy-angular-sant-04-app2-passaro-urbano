@@ -31,6 +31,8 @@ export class HomeComponent implements OnInit {
         console.log(param); 
       });
 
+      console.log('a promise já foi chamada');
+
   }
 
 }
